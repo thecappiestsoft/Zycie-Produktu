@@ -1,0 +1,51 @@
+/* Tokeny kolorów i fontów (jasny / ciemny motyw) + wymuszenie motywu przełącznikiem */
+/* Layout: plansza-obieg po lewej, karta bieżącej tury i tabela graczy po prawej; na telefonie jedna kolumna */
+:root{
+  --bg:#E8EEEA; --surface:#FBFCFB; --surface-2:#DCE5E0; --ink:#14232A; --muted:#536668; --line:#C2CEC8;
+  --accent:#1D6F55; --accent-soft:#D2E7DD; --on-accent:#FFFFFF;
+  --co2:#2A2E31; --co2-ink:#F1F3F2;
+  --z-e:#9A681C; --z-p:#A8432C; --z-t:#2A6497; --z-u:#2F7547; --z-k:#62507F; --z-ink:#FFFFFF;
+  --good:#1F6B45; --good-soft:#D5EBDD; --bad:#A33424; --bad-soft:#F3DCD6; --warn:#8A5A00;
+  --shadow:0 1px 2px rgba(20,35,42,.08),0 6px 18px rgba(20,35,42,.07);
+  --f-display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --f-body:"Atkinson Hyperlegible Next","Atkinson Hyperlegible",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F181A; --surface:#162226; --surface-2:#1E2D31; --ink:#E3ECE8; --muted:#97AAA7; --line:#2D3F43;
+    --accent:#4DBA8F; --accent-soft:#1C3A31; --on-accent:#0C1A15;
+    --co2:#CDD3D6; --co2-ink:#141A1C;
+    --z-e:#B37E2C; --z-p:#BF5640; --z-t:#3B7AB0; --z-u:#3E8C5A; --z-k:#7764A0; --z-ink:#FFFFFF;
+    --good:#5CC48D; --good-soft:#1A3527; --bad:#EE8573; --bad-soft:#3A1F1A; --warn:#E0A84A;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 18px rgba(0,0,0,.25);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F181A; --surface:#162226; --surface-2:#1E2D31; --ink:#E3ECE8; --muted:#97AAA7; --line:#2D3F43;
+  --accent:#4DBA8F; --accent-soft:#1C3A31; --on-accent:#0C1A15;
+  --co2:#CDD3D6; --co2-ink:#141A1C;
+  --z-e:#B37E2C; --z-p:#BF5640; --z-t:#3B7AB0; --z-u:#3E8C5A; --z-k:#7764A0; --z-ink:#FFFFFF;
+  --good:#5CC48D; --good-soft:#1A3527; --bad:#EE8573; --bad-soft:#3A1F1A; --warn:#E0A84A;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 18px rgba(0,0,0,.25);
+  color-scheme:dark;
+}
+
+/* Własny przełącznik motywu: wygrywa z ustawieniem systemu i hosta */
+html:root.zp-light{--bg:#E8EEEA; --surface:#FBFCFB; --surface-2:#DCE5E0; --ink:#14232A; --muted:#536668; --line:#C2CEC8;
+  --accent:#1D6F55; --accent-soft:#D2E7DD; --on-accent:#FFFFFF;
+  --co2:#2A2E31; --co2-ink:#F1F3F2;
+  --z-e:#9A681C; --z-p:#A8432C; --z-t:#2A6497; --z-u:#2F7547; --z-k:#62507F; --z-ink:#FFFFFF;
+  --good:#1F6B45; --good-soft:#D5EBDD; --bad:#A33424; --bad-soft:#F3DCD6; --warn:#8A5A00;
+  --shadow:0 1px 2px rgba(20,35,42,.08),0 6px 18px rgba(20,35,42,.07);
+  color-scheme:light;
+}
+html:root.zp-dark{--bg:#0F181A; --surface:#162226; --surface-2:#1E2D31; --ink:#E3ECE8; --muted:#97AAA7; --line:#2D3F43;
+  --accent:#4DBA8F; --accent-soft:#1C3A31; --on-accent:#0C1A15;
+  --co2:#CDD3D6; --co2-ink:#141A1C;
+  --z-e:#B37E2C; --z-p:#BF5640; --z-t:#3B7AB0; --z-u:#3E8C5A; --z-k:#7764A0; --z-ink:#FFFFFF;
+  --good:#5CC48D; --good-soft:#1A3527; --bad:#EE8573; --bad-soft:#3A1F1A; --warn:#E0A84A;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 18px rgba(0,0,0,.25);
+  color-scheme:dark;
+}

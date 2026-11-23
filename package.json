@@ -1,0 +1,10 @@
+{
+  "name": "zycie-produktu",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Życie Produktu – edukacyjna gra o śladzie węglowym w cyklu życia produktu",
+  "scripts": {
+    "dev": "npx --yes serve -l 5173 .",
+    "build": "node tools/build.mjs"
+  }
+}

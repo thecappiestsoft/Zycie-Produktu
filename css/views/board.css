@@ -1,0 +1,29 @@
+/* Plansza SVG (obieg 5 etapów, pionki, legenda) */
+/* game */
+.game{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:20px;align-items:start}
+@media (max-width:920px){.game{grid-template-columns:1fr}}
+.boardbox{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:12px;display:flex;flex-direction:column;gap:8px}
+.board{width:100%;max-width:520px;margin:0 auto;display:block}
+.ring{fill:none;stroke:var(--line);stroke-width:10}
+.flow{fill:none;stroke:var(--muted);stroke-width:2.5}
+.short{fill:none;stroke:var(--accent);stroke-width:3.5;stroke-dasharray:8 6}
+.repairpath{fill:none;stroke:var(--z-u);stroke-width:2.5;stroke-dasharray:3 5}
+.short.hot{stroke-width:5}
+.arrowM{fill:var(--muted)} .arrowA{fill:var(--accent)} .arrowR{fill:var(--z-u)}
+.node circle.base{stroke:var(--surface);stroke-width:4}
+.node.active circle.base{stroke:var(--ink);stroke-width:5}
+.node text{fill:var(--z-ink);font-family:var(--f-display);font-weight:600;font-size:12px;text-anchor:middle;pointer-events:none}
+.node text.num{font-family:var(--f-mono);font-size:10px;opacity:.85}
+.slabel{fill:var(--accent);font-family:var(--f-body);font-weight:700;font-size:11px;text-anchor:middle}
+.rlabel{fill:var(--z-u);font-family:var(--f-body);font-weight:700;font-size:11px}
+.clabel{fill:var(--muted);font-family:var(--f-body);font-size:10.5px;text-anchor:middle}
+.pawn circle{stroke:var(--ink);stroke-width:2.5}
+.pawn text{font-family:var(--f-mono);font-size:10px;font-weight:600;text-anchor:middle;fill:#111}
+.pawn.cur circle.halo{fill:none;stroke:var(--ink);stroke-width:2;animation:pulse 1.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:.9}50%{opacity:.15}}
+@media (prefers-reduced-motion:reduce){.pawn.cur circle.halo{animation:none}.flash{animation:none!important}}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;justify-content:center;font-size:.85rem;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{display:inline-block;width:22px;height:0;border-top:3px dashed var(--accent)}
+.legend i.r{border-top:3px dotted var(--z-u)}
+

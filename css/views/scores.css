@@ -1,0 +1,18 @@
+/* Tabela graczy i dziennik */
+.scores{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:10px}
+.scoretbl-wrap{overflow-x:auto}
+.scoretbl{width:100%;border-collapse:collapse;font-size:.92rem;min-width:520px}
+.scoretbl th{font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-align:left;padding:4px 6px;border-bottom:1px solid var(--line)}
+.scoretbl td{padding:8px 6px;border-bottom:1px solid var(--line);vertical-align:middle}
+.scoretbl tr.cur td{background:var(--surface-2)}
+.scoretbl .num{text-align:right;font-family:var(--f-mono);font-variant-numeric:tabular-nums;font-weight:600}
+.uses{display:inline-flex;gap:3px}
+.uses i{width:10px;height:10px;border-radius:2px;border:1.5px solid var(--z-u)}
+.uses i.on{background:var(--z-u)}
+.bar{display:flex;height:10px;border-radius:5px;overflow:hidden;background:var(--surface-2);min-width:60px}
+.bar span{display:block;height:100%}
+.status{font-size:.75rem;font-weight:700;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.log{display:flex;flex-direction:column;gap:4px;font-size:.86rem;max-height:180px;overflow:auto}
+.log div{display:flex;gap:8px;align-items:baseline}
+.log .t{font-family:var(--f-mono);color:var(--muted);flex:none}
+

@@ -1,0 +1,95 @@
+/* Bazowe karty produktów (PL) – parametry gry, quiz, ciekawostki */
+"use strict";
+const BASE_PRODUCTS = [
+ { id:"can", name:"Puszka aluminiowa", material:"aluminium", sym:"Al", symSub:"glin",
+   E:3,P:7,R:1,TL:1,TI:3,U:1,L:1,I:null, N:0,repairMax:0,repairLabel:"",repairCost:0,selfRepair:false, second:false,
+   recycleMax:99, deposit:true, localCost:2, bin:"yellow",
+   binWhy:"Puszki trafiają do żółtego pojemnika razem z tworzywami. Puszkę z kaucją najlepiej oddać do automatu.",
+   src:{good:"Boksyt z certyfikatem ASI",goodD:"Kopalnia z rekultywacją terenu i kontrolą odpadów (czerwonego szlamu)."},
+   eco:{title:"Cieńsza ścianka puszki",desc:"Mniej aluminium na tę samą objętość napoju.",dTok:-1,repair:0,cost:1},
+   factProd:"Aluminium otrzymuje się w elektrolizie tlenku glinu rozpuszczonego w stopionym kriolicie. Proces zużywa bardzo dużo prądu (ok. 13–15 kWh na 1 kg metalu).",
+   factRec:"Przetopienie złomu aluminiowego wymaga ok. 95% mniej energii niż produkcja z boksytu. Aluminium można recyklingować praktycznie bez końca.",
+   real:"Puszka 0,33 l: rząd wielkości 0,1–0,2 kg CO₂e (zależnie od udziału recyklatu i źródła energii).",
+   quiz:[
+    {q:"Z jakiej rudy otrzymuje się aluminium?", a:["Boksyt","Hematyt","Galena","Kasyteryt"], why:"Boksyt to skała bogata w uwodnione tlenki glinu. Hematyt (Fe₂O₃) to ruda żelaza, galena (PbS) ołowiu, a kasyteryt (SnO₂) cyny."},
+    {q:"Jaką metodą otrzymuje się metaliczne aluminium z tlenku glinu?", a:["Elektrolizą Al₂O₃ rozpuszczonego w stopionym kriolicie","Redukcją koksem w wielkim piecu","Prażeniem z siarką","Destylacją frakcyjną"], why:"Glin jest zbyt aktywny, by zredukować go węglem jak żelazo. Stosuje się elektrolizę, dlatego aluminium pierwotne jest tak energochłonne."},
+    {q:"Jaki jest wzór tlenku glinu?", a:["Al₂O₃","AlO","AlO₂","Al₃O₂"], why:"Glin jest trójwartościowy (Al³⁺), tlen dwuwartościowy (O²⁻), więc Al₂O₃."},
+    {q:"Dlaczego aluminium nie rdzewieje jak żelazo?", a:["Pokrywa się szczelną warstewką Al₂O₃","Nie reaguje z tlenem","Zawiera dodatek złota","Jest metalem szlachetnym"], why:"Cienka, szczelna warstwa tlenku glinu chroni metal przed dalszym utlenianiem (pasywacja)."}
+   ]},
+ { id:"glass", name:"Butelka szklana", material:"szkło sodowo-wapniowe", sym:"SiO₂", symSub:"krzemionka",
+   E:2,P:5,R:4,TL:2,TI:5,U:1,L:2,I:null, N:1,repairMax:3,repairLabel:"Mycie i ponowne napełnienie",repairCost:1,selfRepair:false, second:false,
+   recycleMax:99, deposit:true, localCost:1, bin:"green",
+   binWhy:"Szkło opakowaniowe wrzucamy do zielonego pojemnika. Butelkę zwrotną oddaje się do sklepu lub automatu.",
+   src:{good:"Lokalny piasek i więcej stłuczki",goodD:"Krótsza droga surowców i mniej węglanów, które przy topieniu uwalniają CO₂."},
+   eco:{title:"Lżejsza butelka",desc:"Cieńsze ścianki: mniej szkła do stopienia.",dTok:-1,repair:0,cost:1},
+   factProd:"Zestaw szklarski (piasek, soda, wapień) topi się w ok. 1500°C. Rozkład węglanów dodatkowo uwalnia CO₂.",
+   factRec:"Stłuczka topi się łatwiej niż surowce: każde 10% stłuczki w zestawie obniża zużycie energii o ok. 2–3% i ogranicza CO₂ z rozkładu węglanów. Szkło jest ciężkie, więc transport ma duże znaczenie.",
+   real:"Butelka jednorazowa 0,33 l: rząd wielkości 0,2–0,4 kg CO₂e. Butelka zwrotna rozkłada ten ślad na wiele napełnień.",
+   quiz:[
+    {q:"Jaki jest główny surowiec do produkcji szkła?", a:["Piasek kwarcowy (SiO₂)","Boksyt","Sól kamienna (NaCl)","Grafit (C)"], why:"Szkło sodowo-wapniowe to głównie krzemionka SiO₂ z dodatkiem sody i wapienia."},
+    {q:"Po co do zestawu szklarskiego dodaje się sodę (Na₂CO₃)?", a:["Obniża temperaturę topnienia","Barwi szkło na zielono","Usuwa z niego tlen","Zwiększa jego masę"], why:"Soda działa jak topnik: obniża temperaturę topnienia krzemionki, co oszczędza energię."},
+    {q:"Jaki gaz wydziela się przy rozkładzie węglanów (CaCO₃, Na₂CO₃) w piecu szklarskim?", a:["CO₂","O₂","SO₂","H₂"], why:"CaCO₃ → CaO + CO₂. To jeden z powodów, dla których dodatek stłuczki zmniejsza ślad węglowy."},
+    {q:"Co nadaje butelkom zielony kolor?", a:["Domieszka związków żelaza i chromu","Chlorofil","Dodatek miedzi metalicznej","Tlenek glinu"], why:"Jony żelaza i chromu barwią szkło na zielono. Dlatego szkło białe i kolorowe segreguje się czasem osobno."}
+   ]},
+ { id:"pet", name:"Butelka PET", material:"poli(tereftalan etylenu)", sym:"PET", symSub:"poliester",
+   E:2,P:5,R:2,TL:1,TI:3,U:1,L:4,I:3, N:0,repairMax:0,repairLabel:"",repairCost:0,selfRepair:false, second:false,
+   recycleMax:2, deposit:true, localCost:1, bin:"yellow",
+   binWhy:"Butelki PET wrzucamy do żółtego pojemnika. Butelkę z kaucją najlepiej oddać do automatu.",
+   src:{good:"PET częściowo biopochodny",goodD:"Część glikolu etylenowego z trzciny cukrowej zamiast z ropy."},
+   eco:{title:"Lżejsza butelka z przytwierdzoną nakrętką",desc:"Mniej tworzywa, a nakrętka nie ginie w środowisku.",dTok:-1,repair:0,cost:1},
+   factProd:"PET powstaje w polikondensacji kwasu tereftalowego i glikolu etylenowego, otrzymywanych z ropy naftowej i gazu ziemnego.",
+   factRec:"Recykling mechaniczny skraca łańcuchy polimeru, dlatego w grze butelkę PET można odzyskać najwyżej 2 razy. Potem trafia do produktów niższej jakości.",
+   real:"Butelka 0,5 l: rząd wielkości 0,08–0,15 kg CO₂e. Spalenie PET uwalnia węgiel kopalny jako CO₂.",
+   quiz:[
+    {q:"Z jakich surowców kopalnych produkuje się PET?", a:["Z ropy naftowej i gazu ziemnego","Z boksytu","Z piasku kwarcowego","Z wapienia"], why:"Monomery PET są produktami przeróbki ropy i gazu, dlatego PET z recyklingu oszczędza paliwa kopalne."},
+    {q:"Do jakiej grupy polimerów należy PET?", a:["Poliestrów","Poliamidów","Białek","Polisacharydów"], why:"PET to politereftalan etylenu, czyli poliester: monomery łączą się wiązaniami estrowymi."},
+    {q:"Z jakich monomerów powstaje PET?", a:["Kwasu tereftalowego i glikolu etylenowego","Etylenu i propylenu","Glukozy","Chlorku winylu"], why:"Kwas dikarboksylowy i diol tworzą w polikondensacji poliester, a ubocznym produktem jest woda."},
+    {q:"Jakie produkty powstają przy całkowitym spaleniu PET?", a:["CO₂ i H₂O","Tylko sadza","SO₂ i NH₃","Wyłącznie tlen"], why:"PET zawiera tylko C, H i O, więc przy pełnym spaleniu powstają CO₂ i woda. Ten CO₂ pochodzi z węgla kopalnego."}
+   ]},
+ { id:"tshirt", name:"Koszulka bawełniana", material:"bawełna (celuloza)", sym:"C", symSub:"celuloza",
+   E:4,P:4,R:3,TL:1,TI:3,U:2,L:2,I:2, N:1,repairMax:2,repairLabel:"Naprawa u krawcowej",repairCost:2,selfRepair:true, second:true,
+   recycleMax:1, deposit:false, localCost:3, bin:"textile",
+   binWhy:"Od 2025 r. gminy muszą zbierać tekstylia osobno: do pojemników na odzież lub do PSZOK, nie do zmieszanych.",
+   src:{good:"Bawełna organiczna",goodD:"Bez syntetycznych nawozów azotowych, więc mniej N₂O z gleby."},
+   eco:{title:"Mocniejsze szwy i lepsza tkanina",desc:"Produkcja trochę droższa w żetonach, ale koszulkę naprawisz jeszcze raz.",dTok:1,repair:1,cost:1},
+   factProd:"Uprawa bawełny wymaga dużo wody i nawozów, a przędzenie, tkanie i barwienie pochłaniają sporo energii. Na jedną koszulkę zużywa się według WWF ok. 2700 litrów wody.",
+   factRec:"Recykling mechaniczny skraca włókna, więc włókno odzyskane miesza się z nowym. W grze koszulkę można odzyskać tylko raz.",
+   real:"Koszulka: rząd wielkości 2–7 kg CO₂e. Źródła różnią się bardzo, bo liczą pranie i suszenie w różny sposób.",
+   quiz:[
+    {q:"Jaki związek jest głównym składnikiem włókna bawełny?", a:["Celuloza","Keratyna","Skrobia","Fibroina"], why:"Bawełna to niemal czysta celuloza. Keratyna buduje wełnę, a fibroina jedwab."},
+    {q:"Celuloza jest polimerem:", a:["glukozy","fruktozy","aminokwasów","etylenu"], why:"Celuloza to łańcuchy cząsteczek β-glukozy. Ten sam polimer znajdziesz w papierze."},
+    {q:"Który gaz cieplarniany uwalnia się z gleby intensywnie nawożonej azotem?", a:["Podtlenek azotu (N₂O)","Hel (He)","Argon (Ar)","Wodór (H₂)"], why:"N₂O powstaje przy przemianach nawozów azotowych w glebie i jest silnym gazem cieplarnianym."},
+    {q:"Który gaz powstaje przy rozkładzie bawełny na składowisku bez dostępu tlenu?", a:["Metan (CH₄)","Ozon (O₃)","Chlor (Cl₂)","Neon (Ne)"], why:"Bakterie beztlenowe rozkładają celulozę z wydzieleniem metanu, który ogrzewa klimat znacznie silniej niż CO₂."}
+   ]},
+ { id:"phone", name:"Smartfon", material:"metale, szkło, tworzywa", sym:"Li", symSub:"Li · Cu · Ta",
+   E:4,P:6,R:5,TL:1,TI:2,U:1,L:2,I:null, N:1,repairMax:2,repairLabel:"Serwis: bateria lub ekran",repairCost:3,selfRepair:true, second:true,
+   recycleMax:1, deposit:false, localCost:3, bin:"ewaste",
+   binWhy:"Elektroodpady oddajemy do sklepu z elektroniką lub do PSZOK. Nie wolno ich wyrzucać do żadnego z kolorowych pojemników.",
+   src:{good:"Metale z certyfikowanych kopalń",goodD:"Kontrolowane źródła cyny, tantalu, wolframu i złota, bez finansowania konfliktów."},
+   eco:{title:"Projekt modułowy",desc:"Bateria i ekran wymienne bez kleju: telefon wytrzyma jedną naprawę więcej.",dTok:0,repair:1,cost:1},
+   factProd:"Ok. 80% śladu węglowego smartfona powstaje przy produkcji: wydobyciu metali i wytwarzaniu układów scalonych.",
+   factRec:"Z elektroodpadów odzyskuje się m.in. miedź, złoto i kobalt, ale nowy smartfon i tak wymaga wiele nowej produkcji. Dlatego naprawa daje dużo więcej niż recykling.",
+   real:"Smartfon (cały cykl): rząd wielkości 50–80 kg CO₂e, z czego większość to produkcja.",
+   quiz:[
+    {q:"Z jakiej rudy pozyskuje się tantal do kondensatorów w telefonach?", a:["Koltan","Galena","Magnetyt","Boksyt"], why:"Koltan to mieszanina minerałów kolumbitu i tantalitu. Jego wydobycie bywa powiązane z konfliktami zbrojnymi."},
+    {q:"Który pierwiastek jest podstawą układów scalonych?", a:["Krzem","Siarka","Sód","Wapń"], why:"Procesory produkuje się na płytkach z bardzo czystego krzemu, co wymaga dużo energii."},
+    {q:"Skąd pozyskuje się lit do baterii?", a:["Z solanek i minerałów, np. spodumenu","Z boksytu","Z piasku kwarcowego","Z wapienia"], why:"Lit odzyskuje się z solanek (odparowanie wody) lub z rud takich jak spodumen."},
+    {q:"Z jakiej rudy otrzymuje się najwięcej miedzi na ścieżki przewodzące?", a:["Z chalkopirytu (CuFeS₂)","Z boksytu","Z halitu (NaCl)","Z kwarcu (SiO₂)"], why:"Większość miedzi pochodzi z rud siarczkowych, np. chalkopirytu. Polska ma duże złoża takich rud na Dolnym Śląsku."}
+   ]},
+ { id:"bag", name:"Papierowa torba", material:"papier (celuloza)", sym:"C", symSub:"celuloza",
+   E:3,P:5,R:3,TL:1,TI:3,U:0,L:4,I:1, N:0,repairMax:1,repairLabel:"Ponowne użycie torby",repairCost:0,selfRepair:false, second:false,
+   recycleMax:3, deposit:false, localCost:1, bin:"blue",
+   binWhy:"Czysty papier i tektura trafiają do niebieskiego pojemnika. Papier zatłuszczony lub mokry wyrzucamy do zmieszanych.",
+   src:{good:"Drewno z certyfikatem FSC",goodD:"Las jest odnawiany, a wycinka planowana."},
+   eco:{title:"Grubszy papier i mocne uchwyty",desc:"Więcej materiału, ale torbę użyjesz jeszcze raz.",dTok:1,repair:1,cost:0},
+   factProd:"W procesie siarczanowym z drewna usuwa się ligninę, a zostaje masa celulozowa. Torba papierowa ma większy ślad produkcji niż foliówka, więc opłaca się dopiero przy wielokrotnym użyciu.",
+   factRec:"Przy każdym recyklingu włókna celulozy skracają się, więc papier można przetworzyć ok. 5–7 razy. W grze torbę odzyskasz maksymalnie 3 razy.",
+   real:"Torba papierowa: rząd wielkości 0,05–0,1 kg CO₂e. Na składowisku rozkłada się beztlenowo z wydzieleniem metanu.",
+   quiz:[
+    {q:"Jaki jest główny surowiec do produkcji papieru?", a:["Drewno (celuloza)","Piasek kwarcowy","Ropa naftowa","Boksyt"], why:"Papier to splecione włókna celulozy, najczęściej z drewna."},
+    {q:"Co usuwa się z drewna w procesie siarczanowym?", a:["Ligninę","Celulozę","Glukozę","Krzemionkę"], why:"Lignina skleja włókna w drewnie. Jej usunięcie daje masę celulozową do produkcji papieru."},
+    {q:"Dlaczego papier można recyklingować tylko kilka razy?", a:["Włókna celulozy skracają się","Papier zamienia się w plastik","Celuloza rozpuszcza się w wodzie","Papier zawiera metale ciężkie"], why:"Krótkie włókna słabo się splatają, więc papier traci wytrzymałość."},
+    {q:"Jakim związkiem wybiela się często masę celulozową bez użycia chloru?", a:["Nadtlenkiem wodoru (H₂O₂)","Kwasem solnym (HCl)","Chlorkiem sodu (NaCl)","Amoniakiem (NH₃)"], why:"Wybielanie bezchlorowe (TCF) wykorzystuje m.in. nadtlenek wodoru i ozon, co ogranicza toksyczne związki chloroorganiczne w ściekach."}
+   ]}
+];
+

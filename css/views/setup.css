@@ -1,0 +1,32 @@
+/* Ekran ustawień i edytor własnych kart */
+/* setup */
+.setup{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:20px}
+@media (max-width:860px){.setup{grid-template-columns:1fr}}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.intro p{max-width:62ch}
+.players-edit{display:flex;flex-direction:column;gap:8px}
+.prow{display:flex;gap:8px;align-items:center}
+.prow input{flex:1;min-width:0}
+.swatch{width:28px;height:28px;border-radius:50%;flex:none;border:2px solid var(--ink)}
+input[type=text],input[type=number],input[type=url],textarea,select{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px 10px;min-height:40px;width:100%}
+textarea{min-height:80px;resize:vertical}
+label{font-weight:600;font-size:.92rem}
+.field{display:flex;flex-direction:column;gap:4px;min-width:0}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.seg button{border:0;background:var(--surface);padding:8px 14px;min-height:40px;font-weight:600}
+.seg button[aria-pressed=true]{background:var(--accent);color:var(--on-accent)}
+.seg button[aria-pressed=false]:hover{background:var(--surface-2)}
+.check{display:flex;gap:10px;align-items:flex-start;font-weight:400}
+.check input{width:20px;height:20px;margin-top:2px;flex:none;accent-color:var(--accent)}
+.note{font-size:.9rem;color:var(--muted);background:var(--surface-2);border-radius:10px;padding:10px 12px}
+.stagestrip{display:flex;flex-wrap:wrap;gap:6px}
+.stagechip{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;font-weight:700;color:var(--z-ink);border-radius:999px;padding:3px 10px}
+details.custom{border-top:1px solid var(--line);padding-top:12px}
+details.custom summary{cursor:pointer;font-family:var(--f-display);font-weight:600;font-size:1.05rem}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+.grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(92px,1fr));gap:8px}
+.customlist{display:flex;flex-direction:column;gap:6px}
+.customitem{display:flex;justify-content:space-between;gap:8px;align-items:center;border:1px solid var(--line);border-radius:10px;padding:8px 10px}
+.msg{font-size:.9rem;font-weight:600}
+.msg.err{color:var(--bad)} .msg.ok{color:var(--good)}
+

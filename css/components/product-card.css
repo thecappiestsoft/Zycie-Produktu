@@ -1,0 +1,17 @@
+/* Karta produktu */
+/* product card */
+.pcards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.pcard{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.pcard-head{display:flex;gap:12px;align-items:center}
+.elem{width:54px;height:54px;flex:none;border:2px solid var(--ink);border-radius:6px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--surface-2);font-family:var(--f-mono);line-height:1}
+.elem b{font-size:1.15rem;font-weight:600}
+.elem span{font-size:.55rem;margin-top:4px;color:var(--muted);text-align:center;padding:0 2px}
+.ptable{width:100%;border-collapse:collapse;font-size:.88rem}
+.ptable td{padding:3px 0;border-bottom:1px dashed var(--line)}
+.ptable td:last-child{text-align:right;font-family:var(--f-mono);font-variant-numeric:tabular-nums;font-weight:600}
+.badges{display:flex;flex-wrap:wrap;gap:6px}
+.badge{font-size:.75rem;font-weight:700;padding:2px 8px;border-radius:999px;background:var(--surface-2);color:var(--ink)}
+.badge.green{background:var(--accent-soft);color:var(--accent)}
+.owner{display:flex;align-items:center;gap:8px;font-weight:700}
+.dot{width:14px;height:14px;border-radius:50%;flex:none;border:2px solid var(--ink)}
+

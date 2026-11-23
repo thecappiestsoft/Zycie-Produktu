@@ -1,0 +1,17 @@
+/* Pasek górny i stopka */
+/* top bar */
+.top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding-bottom:14px;border-bottom:2px solid var(--ink);margin-bottom:18px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-mark{width:44px;height:44px;flex:none}
+.brand small{display:block;color:var(--muted);font-size:.85rem}
+.top-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.seg.lang button{min-height:34px;padding:5px 12px;font-size:.9rem;display:inline-flex;align-items:center;gap:6px}
+.seg.lang svg{width:17px;height:17px;flex:none}
+.seg.lang button[data-act=theme]{padding:5px 10px;min-width:40px;justify-content:center}
+
+/* CO2 token */
+.tok{display:inline-flex;align-items:center;justify-content:center;width:1.55em;height:1.55em;border-radius:50%;background:var(--co2);color:var(--co2-ink);font-family:var(--f-mono);font-size:.6em;font-weight:600;letter-spacing:-.04em;vertical-align:middle;box-shadow:inset 0 0 0 2px color-mix(in srgb,var(--co2-ink) 25%,transparent)}
+.tokcount{display:inline-flex;align-items:center;gap:6px;font-family:var(--f-mono);font-weight:600}
+.tokcount .tok{font-size:.95rem}
+
+.foot{margin-top:32px;padding-top:14px;border-top:1px solid var(--line);text-align:center;font-size:.85rem;color:var(--muted)}

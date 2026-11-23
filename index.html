@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Życie Produktu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Atkinson+Hyperlegible+Next:wght@400;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/views/setup.css">
+<link rel="stylesheet" href="css/components/product-card.css">
+<link rel="stylesheet" href="css/views/board.css">
+<link rel="stylesheet" href="css/views/turn.css">
+<link rel="stylesheet" href="css/views/scores.css">
+<link rel="stylesheet" href="css/views/end.css">
+<link rel="stylesheet" href="css/components/widgets.css">
+<link rel="stylesheet" href="css/components/dialog.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 44 44" aria-hidden="true">
+        <circle cx="22" cy="22" r="17" fill="none" stroke="var(--ink)" stroke-width="3"/>
+        <circle cx="22" cy="5" r="4.5" fill="var(--z-e)"/><circle cx="38.2" cy="16.7" r="4.5" fill="var(--z-p)"/>
+        <circle cx="32" cy="35.8" r="4.5" fill="var(--z-t)"/><circle cx="12" cy="35.8" r="4.5" fill="var(--z-u)"/>
+        <circle cx="5.8" cy="16.7" r="4.5" fill="var(--z-k)"/>
+        <path d="M8 18 Q22 27 36 18" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-dasharray="3 3"/>
+      </svg>
+      <div id="brandText"></div>
+    </div>
+    <div class="top-actions" id="topActions"></div>
+  </header>
+  <main id="view"></main>
+  <footer class="foot">© 2026 CappySoft.pl</footer>
+</div>
+<dialog id="dlg"></dialog>
+
+<!-- Skrypty klasyczne (nie moduły ES): współdzielą zakres globalny, więc KOLEJNOŚĆ MA ZNACZENIE. -->
+<script src="js/core/i18n.js"></script>
+<script src="js/core/theme.js"></script>
+<script src="js/data/stages.js"></script>
+<script src="js/data/products.js"></script>
+<script src="js/data/products.en.js"></script>
+<script src="js/data/events.js"></script>
+<script src="js/data/news.js"></script>
+<script src="js/core/state.js"></script>
+<script src="js/ui/render.js"></script>
+<script src="js/ui/setup.js"></script>
+<script src="js/ui/draw.js"></script>
+<script src="js/ui/board.js"></script>
+<script src="js/game/options.js"></script>
+<script src="js/game/turn.js"></script>
+<script src="js/game/actions.js"></script>
+<script src="js/ui/end.js"></script>
+<script src="js/ui/dialogs.js"></script>
+<script src="js/ui/custom-cards.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
